@@ -1,14 +1,17 @@
-.center-align{
+.body-center{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.form-align{
+
+.form {
     display: flex;
     flex-direction: column;
-    max-width: 500vw;
     align-items: flex-start;
     justify-content: center;
-    width: 250px;
+}
+
+.book {
+    margin: 1rem;
 }
