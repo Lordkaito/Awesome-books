@@ -70,3 +70,8 @@ Feel free to check the [issues page](https://github.com/Lordkaito/Awesome-books/
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## License
+
+This project is licensed under the MIT License.
+
