@@ -22,11 +22,9 @@ In this project, We built a basic website that allows users to add/remove books 
 ## Author 2
 👤 **Bhagyashree Patra**
 
-- GitHub: @Vagyasri
-- Twitter: @Vagyasri
-- LinkedIn: Bhagyashree Patra
-
-- GitHub: [@elasfarc](https://github.com/elasfarc)
+- GitHub: [@Vagyasri](https://github.com/Vagyasri)
+- Twitter: [@Vagyasri](https://twitter.com/Vagyasri)
+- LinkedIn: [Bhagyashree Patra](https://www.linkedin.com/in/bhagyashree-patra-029bb059/)
 
 ## Getting Started
 
