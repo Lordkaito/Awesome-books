@@ -7,7 +7,7 @@ let bookList = [];
 const addBookToList = (book) => {
   const div = document.createElement('div');
   const divWrapper = document.createElement('div');
-  divWrapper.classList.add('book-wrapper');
+  divWrapper.classList.add("book-wrapper");
   div.classList.add('book');
   const button = document.createElement('button');
   const text = document.createElement('h3');
@@ -47,7 +47,7 @@ class Book {
 const removeBook = (e) => {
   if (e.target.classList.contains('delete-book')) {
     // eslint-disable-next-line max-len
-    const bookToDelete = bookList.find((book) => book.title === e.target.parentElement.firstChild.innerText);
+    const bookToDelete = bookList.find((book) => book.title === e.target.parentElement.firstElementChild.textContent.split('"')[1]);
     bookList.splice(bookList.indexOf(bookToDelete), 1);
     localStorage.setItem('books', JSON.stringify(bookList));
   }
@@ -56,7 +56,6 @@ const removeBook = (e) => {
   bookList.forEach((book) => {
     addBookToList(book);
   });
-  // eslint-disable-next-line no-restricted-globals
   location.reload();
 };
 
@@ -67,6 +66,17 @@ button.addEventListener('click', () => {
   book.addBook();
   titleSel.value = '';
   authorSel.value = '';
+});
+
+authorSel.addEventListener('keypress', (e) => {
+  if (e.keyCode === 13) {
+    const title = titleSel.value;
+    const author = authorSel.value;
+    const book = new Book(title, author);
+    book.addBook();
+    titleSel.value = '';
+    authorSel.value = '';
+  }
 });
 
 window.addEventListener('load', () => {
@@ -81,5 +91,3 @@ window.addEventListener('load', () => {
     });
   }
 });
-
-// check if there is content inside bookSel
