@@ -1,6 +1,6 @@
 # Awesome-Books
 
-In this milestone, we have refactored the Awesome books application by using JavaScript classes.
+In this milestone, we have added plain CSS styles to the Awesome books application.
 
 ## Built With
 
@@ -10,7 +10,7 @@ In this milestone, we have refactored the Awesome books application by using Jav
 
 ## Live Demo
 
-[Live View!!](https://mystifying-mayer-07e5be.netlify.app/)
+[Live View!!](https://lordkaito.github.io/Awesome-books/)
 
 ## Author 1
 👤 **Isaí Céspedes Sánchez**
