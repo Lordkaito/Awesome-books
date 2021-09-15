@@ -1,6 +1,6 @@
 # Awesome-Books
 
-In this milestone, we have refactored the Awesome books application by using JavaScript classes.
+In this milestone, we have added plain CSS styles to the Awesome books application.
 
 ## Built With
 
