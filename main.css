@@ -1,3 +1,31 @@
+#book-list {
+  border: 3px solid black;
+  width: 800px;
+  height: 250px;
+  overflow: auto;
+}
+
+#add-book {
+  align-self: flex-end;
+}
+
+.book-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.book {
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  padding: 3px;
+}
+
+.book:nth-child(even) {
+  background-color: grey;
+}
+
 .body-center {
   display: flex;
   flex-direction: column;
@@ -5,13 +33,25 @@
   justify-content: center;
 }
 
+.horizon {
+  height: 3px;
+  width: 400px;
+  background-color: black;
+}
+
 .form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  max-width: 50%;
+  width: 15%;
 }
 
-.book {
-  margin: 1rem;
+.adjust-margin {
+  margin: 15px 0;
+}
+
+input {
+  width: 100%;
 }

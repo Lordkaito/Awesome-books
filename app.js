@@ -7,18 +7,24 @@ let bookList = [];
 // add books to the page
 const addBookToList = (book) => {
   const div = document.createElement('div');
+  const divWrapper = document.createElement('div');
+  divWrapper.classList.add("book-wrapper");
   div.classList.add('book');
   const button = document.createElement('button');
-  const text = document.createElement('p');
+  const text = document.createElement('h3');
   const textH3 = document.createElement('h3');
+  const textBy = document.createElement('h3');
   button.classList.add('delete-book');
   text.textContent = book.author;
-  textH3.textContent = book.title;
+  textH3.textContent = `"${book.title}"`;
   button.textContent = 'Delete';
+  textBy.textContent = 'by';
   // eslint-disable-next-line no-use-before-define
   button.addEventListener('click', removeBook);
-  div.appendChild(textH3);
-  div.appendChild(text);
+  divWrapper.appendChild(textH3);
+  divWrapper.appendChild(textBy);
+  divWrapper.appendChild(text);
+  div.appendChild(divWrapper);
   div.appendChild(button);
   bookSel.appendChild(div);
 };
