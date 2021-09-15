@@ -1,6 +1,7 @@
 * {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 #book-list {
   border: 3px solid darkgray;
   border-radius: 5px;
@@ -97,7 +98,6 @@ input {
 
 input:focus-visible {
   border: 2px solid rgba(52, 63, 223, 0.986);
-
 }
 
 .hidden {
