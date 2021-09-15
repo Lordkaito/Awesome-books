@@ -1,8 +1,13 @@
 #book-list {
   border: 3px solid black;
+  border-radius: 2%;
   width: 800px;
   height: 250px;
   overflow: auto;
+}
+
+.delete-book {
+  border-radius: 40%;
 }
 
 #add-book {
@@ -22,8 +27,12 @@
   padding: 3px;
 }
 
+.book:nth-child(odd) {
+  background-color: rgba(204, 0, 255, 0.897);
+}
+
 .book:nth-child(even) {
-  background-color: grey;
+  background-color: rgba(204, 0, 255, 0.295);
 }
 
 .body-center {

@@ -7,7 +7,7 @@ let bookList = [];
 const addBookToList = (book) => {
   const div = document.createElement('div');
   const divWrapper = document.createElement('div');
-  divWrapper.classList.add("book-wrapper");
+  divWrapper.classList.add('book-wrapper');
   div.classList.add('book');
   const button = document.createElement('button');
   const text = document.createElement('h3');
@@ -56,6 +56,7 @@ const removeBook = (e) => {
   bookList.forEach((book) => {
     addBookToList(book);
   });
+  // eslint-disable-next-line no-restricted-globals
   location.reload();
 };
 
