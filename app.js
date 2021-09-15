@@ -1,54 +1,72 @@
-// const books = document.querySelector('#book-list');
-// const button = document.querySelector('#add-book');
-// const title = document.querySelector('#title');
-// const author = document.querySelector('#author');
+const bookSel = document.querySelector('#book-list');
+const button = document.querySelector('#add-book');
+const titleSel = document.querySelector('#title');
+const authorSel = document.querySelector('#author');
+let bookList = [];
 
-// // constructor function
-// const Book = function (title, author) {
-//   this.title = title;
-//   this.author = author;
-// };
+// add books to the page
+const addBookToList = (book) => {
+  const div = document.createElement('div');
+  div.classList.add('book');
+  const button = document.createElement('button');
+  const text = document.createElement('p');
+  const textH3 = document.createElement('h3');
+  button.classList.add('delete-book');
+  text.textContent = book.author;
+  textH3.textContent = book.title;
+  button.textContent = 'Delete';
+  // eslint-disable-next-line no-use-before-define
+  button.addEventListener('click', removeBook);
+  div.appendChild(textH3);
+  div.appendChild(text);
+  div.appendChild(button);
+  bookSel.appendChild(div);
+};
 
-// // array of books
-// let bookList = [];
+// class Book constructor with methods add and delete
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
 
-// const addBookToList = (newBook) => {
-//   const div = document.createElement('div');
-//   div.classList.add('book');
-//   div.innerHTML = `<h3>Book: ${newBook.title}</h3>
-//                     <p>Author: ${newBook.author}</p>
-//                     <button type="button" class="delete">Delete</button>`;
-//   books.appendChild(div);
-// };
+  addBook() {
+    bookList.push({ title: this.title, author: this.author });
+    localStorage.setItem('books', JSON.stringify(bookList));
+    addBookToList(this);
+  }
+}
 
-// window.addEventListener('load', () => {
-//   if (books !== null) {
-//     bookList = [...JSON.parse(localStorage.getItem('books'))];
-//     bookList.forEach((book) => {
-//       addBookToList(book);
-//     });
-//   }
-// });
+// removes book from the page
+const removeBook = (e) => {
+  if (e.target.classList.contains('delete-book')) {
+    // eslint-disable-next-line max-len
+    const bookToDelete = bookList.find((book) => book.title === e.target.parentElement.firstChild.innerText);
+    bookList.splice(bookList.indexOf(bookToDelete), 1);
+    localStorage.setItem('books', JSON.stringify(bookList));
+  }
+  bookSel.innerHTML = '';
+  bookList = [...JSON.parse(localStorage.getItem('books'))];
+  bookList.forEach((book) => {
+    addBookToList(book);
+  });
+};
 
-// // event listener for button
+button.addEventListener('click', () => {
+  const title = titleSel.value;
+  const author = authorSel.value;
+  const book = new Book(title, author);
+  book.addBook();
+  titleSel.value = '';
+  authorSel.value = '';
+});
 
-// button.addEventListener('click', () => {
-//   const newBook = new Book(title.value, author.value);
-//   bookList.push(newBook);
-//   addBookToList(newBook);
-//   title.value = '';
-//   author.value = '';
-//   localStorage.setItem('books', JSON.stringify(bookList));
-// });
-
-// // // add delete button event listener
-// books.addEventListener('click', (e) => {
-//   if (e.target.classList.contains('delete')) {
-//     const book = e.target.parentElement;
-//     books.removeChild(book);
-//     // eslint-disable-next-line max-len
-//     const bookToDelete = bookList.find((book) => book.title === e.target.parentElement.firstChild.innerText);
-//     bookList.splice(bookList.indexOf(bookToDelete), 1);
-//     localStorage.setItem('books', JSON.stringify(bookList));
-//   }
-// });
+window.addEventListener('load', () => {
+  const localBooks = JSON.parse(localStorage.getItem('books'));
+  if (localBooks !== null) {
+    bookList = [...JSON.parse(localStorage.getItem('books'))];
+    bookList.forEach((book) => {
+      addBookToList(book);
+    });
+  }
+});
