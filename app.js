@@ -3,7 +3,6 @@ const button = document.querySelector('#add-book');
 const titleSel = document.querySelector('#title');
 const authorSel = document.querySelector('#author');
 let bookList = [];
-
 // add books to the page
 const addBookToList = (book) => {
   const div = document.createElement('div');
@@ -27,6 +26,7 @@ const addBookToList = (book) => {
   div.appendChild(divWrapper);
   div.appendChild(button);
   bookSel.appendChild(div);
+  bookSel.style.display = 'block';
 };
 
 // class Book constructor with methods add and delete
@@ -56,6 +56,7 @@ const removeBook = (e) => {
   bookList.forEach((book) => {
     addBookToList(book);
   });
+  location.reload();
 };
 
 button.addEventListener('click', () => {
@@ -68,6 +69,9 @@ button.addEventListener('click', () => {
 });
 
 window.addEventListener('load', () => {
+  if (bookSel.childElementCount === 0) {
+    bookSel.classList.add('hidden');
+  }
   const localBooks = JSON.parse(localStorage.getItem('books'));
   if (localBooks !== null) {
     bookList = [...JSON.parse(localStorage.getItem('books'))];
@@ -76,3 +80,5 @@ window.addEventListener('load', () => {
     });
   }
 });
+
+// check if there is content inside bookSel
