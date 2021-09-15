@@ -1,38 +1,62 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 #book-list {
-  border: 3px solid black;
-  border-radius: 2%;
+  border: 3px solid darkgray;
+  border-radius: 5px;
   width: 800px;
   height: 250px;
   overflow: auto;
 }
 
 .delete-book {
-  border-radius: 40%;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid black;
+  width: 80px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.delete-book:hover {
+  background-color: #ff5959;
+  color: white;
 }
 
 #add-book {
   align-self: flex-end;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid black;
+  width: 80px;
+  height: 35px;
+  box-shadow: 2px 2px 2px black;
+}
+
+#add-book:hover {
+  background-color: rgba(52, 63, 223, 0.986);
+  color: white;
 }
 
 .book-wrapper {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: white;
 }
 
 .book {
   display: flex;
   justify-content: space-between;
   height: 35px;
-  padding: 3px;
+  padding: 8px;
 }
 
 .book:nth-child(odd) {
-  background-color: rgba(204, 0, 255, 0.897);
+  background-color: rgba(15, 26, 168, 0.979);
 }
 
 .book:nth-child(even) {
-  background-color: rgba(204, 0, 255, 0.295);
+  background-color: rgba(15, 25, 168, 0.705);
 }
 
 .body-center {
@@ -43,9 +67,9 @@
 }
 
 .horizon {
-  height: 3px;
+  height: 1px;
   width: 400px;
-  background-color: black;
+  background-color: darkgray;
 }
 
 .form {
@@ -59,10 +83,21 @@
 
 .adjust-margin {
   margin: 15px 0;
+  text-align: center;
 }
 
 input {
   width: 100%;
+  font-size: 1.1em;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid darkgray;
+}
+
+input:focus-visible {
+  border: 2px solid rgba(52, 63, 223, 0.986);
+
 }
 
 .hidden {
