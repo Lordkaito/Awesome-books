@@ -1,6 +1,6 @@
 # Awesome-Books
 
-In this project, We built a basic website that allows users to add/remove books from a list. We achieved that by using JavaScript objects and arrays. Also, we had dynamically modified the DOM and added basic events.
+In this milestone, we have refactored the Awesome books application by using JavaScript classes.
 
 ## Built With
 
@@ -15,9 +15,9 @@ In this project, We built a basic website that allows users to add/remove books 
 ## Author 1
 👤 **Isaí Céspedes Sánchez**
 
-- GitHub: @Lordkaito
-- Twitter: @Lordkaito_
-- LinkedIn: Isaí Céspedes 
+- GitHub: [@Lordkaito](https://github.com/Lordkaito)
+- Twitter: [@Lordkaito_](https://twitter.com/Lordkaito_)
+- LinkedIn: [Isaí Céspedes](https://www.linkedin.com/in/isai-c%C3%A9spedes-4164a51b4/)
 
 ## Author 2
 👤 **Bhagyashree Patra**
