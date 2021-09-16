@@ -1,5 +1,9 @@
-const date = new Date();
-document.getElementById('date-time').innerHTML = date;
+const date = luxon.DateTime.local().toFormat('MMMM D hh:mm a');
+date.toLocaleString({ month: 'long', day: 'numeric' });
+
+// const seconds = luxon.DateTime.local().diff(luxon.DateTime.local().plus({ seconds: 1 }), 'seconds');
+const dateTime = document.getElementById('date-time');
+dateTime.innerHTML = `${date}`;
 const bookSel = document.querySelector('#book-list');
 const button = document.querySelector('#add-book');
 const titleSel = document.querySelector('#title');
