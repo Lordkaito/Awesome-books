@@ -80,6 +80,7 @@ button.addEventListener('click', () => {
   titleSel.value = '';
   authorSel.value = '';
   // eslint-disable-next-line no-use-before-define
+  // eslint-disable-next-line no-restricted-globals
   location.reload();
 });
 
@@ -114,21 +115,21 @@ window.addEventListener('load', () => {
   }
 });
 
-list.addEventListener('click', (e) => {
+list.addEventListener('click', () => {
   bookSel.classList.remove('hidden');
   form.classList.add('hidden');
   contactInfo.classList.add('hidden');
   listH2.classList.remove('hidden');
   listHr.classList.remove('hidden');
 });
-add.addEventListener('click', (e) => {
+add.addEventListener('click', () => {
   form.classList.remove('hidden');
   bookSel.classList.add('hidden');
   listH2.classList.add('hidden');
   listHr.classList.add('hidden');
   contactInfo.classList.add('hidden');
 });
-contact.addEventListener('click', (e) => {
+contact.addEventListener('click', () => {
   contactInfo.classList.remove('hidden');
   form.classList.add('hidden');
   bookSel.classList.add('hidden');
@@ -138,5 +139,6 @@ contact.addEventListener('click', (e) => {
 
 reload.addEventListener('click', () => {
   // eslint-disable-next-line no-use-before-define
+  // eslint-disable-next-line no-restricted-globals
   location.reload();
 });
