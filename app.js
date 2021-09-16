@@ -1,7 +1,21 @@
+// eslint-disable-next-line no-undef
+const date = luxon.DateTime.local().toFormat('MMMM D hh:mm a');
+date.toLocaleString({ month: 'long', day: 'numeric' });
+const dateTime = document.getElementById('date-time');
+dateTime.innerHTML = `${date}`;
 const bookSel = document.querySelector('#book-list');
 const button = document.querySelector('#add-book');
 const titleSel = document.querySelector('#title');
 const authorSel = document.querySelector('#author');
+const list = document.querySelector('.list');
+const add = document.querySelector('.add');
+const contact = document.querySelector('.contact');
+const form = document.querySelector('form');
+const contactInfo = document.querySelector('.contact-info');
+const listH2 = document.querySelector('.list-h2');
+const listHr = document.querySelector('.horizon');
+const reload = document.querySelector('.reload');
+
 let bookList = [];
 // add books to the page
 const addBookToList = (book) => {
@@ -68,6 +82,9 @@ button.addEventListener('click', () => {
   book.addBook();
   titleSel.value = '';
   authorSel.value = '';
+  // eslint-disable-next-line no-use-before-define
+  // eslint-disable-next-line no-restricted-globals
+  location.reload();
 });
 
 authorSel.addEventListener('keypress', (e) => {
@@ -82,9 +99,16 @@ authorSel.addEventListener('keypress', (e) => {
 });
 
 window.addEventListener('load', () => {
-  if (bookSel.childElementCount === 0) {
-    bookSel.classList.add('hidden');
-  }
+  // bookList.classList.remove('hidden');
+  // if (bookSel.childElementCount === 0) {
+  //   bookSel.classList.add('hidden');
+  //   listH2.classList.add('hidden');
+  //   listHr.classList.add('hidden');
+  // } else {
+  //   bookSel.classList.remove('hidden');
+  //   listH2.classList.remove('hidden');
+  //   listHr.classList.remove('hidden');
+  // }
   const localBooks = JSON.parse(localStorage.getItem('books'));
   if (localBooks !== null) {
     bookList = [...JSON.parse(localStorage.getItem('books'))];
@@ -92,4 +116,32 @@ window.addEventListener('load', () => {
       addBookToList(book);
     });
   }
+});
+
+list.addEventListener('click', () => {
+  bookSel.classList.remove('hidden');
+  form.classList.add('hidden');
+  contactInfo.classList.add('hidden');
+  listH2.classList.remove('hidden');
+  listHr.classList.remove('hidden');
+});
+add.addEventListener('click', () => {
+  form.classList.remove('hidden');
+  bookSel.classList.add('hidden');
+  listH2.classList.add('hidden');
+  listHr.classList.add('hidden');
+  contactInfo.classList.add('hidden');
+});
+contact.addEventListener('click', () => {
+  contactInfo.classList.remove('hidden');
+  form.classList.add('hidden');
+  bookSel.classList.add('hidden');
+  listH2.classList.add('hidden');
+  listHr.classList.add('hidden');
+});
+
+reload.addEventListener('click', () => {
+  // eslint-disable-next-line no-use-before-define
+  // eslint-disable-next-line no-restricted-globals
+  location.reload();
 });

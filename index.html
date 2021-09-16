@@ -8,16 +8,48 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body class="body-center">
-    <h2>All awesome books</h2>
+    <nav class="nav-align">
+        <ul class="nav-bar">
+            <li class="nav-left">
+                <div class="reload">Awesome Books</div>
+            </li>
+            <li class="nav-right">
+                <div class="space-border">
+                    <a class="list">List</a>
+                </div>
+                <div class="space-border">
+                    <a class="add">Add new</a>
+                </div>
+                <div class="space-border rmv-border">
+                    <a class="contact">Contact</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id='date-time'></div>
+    <h2 class="list-h2">All awesome books</h2>
     <div id="book-list">
     </div>
+    <br>
     <hr class="horizon">
     <form class="form">
         <h2 class="adjust-margin">Add a new book</h2>
-        <input type="text" placeholder="Title" id="title"><br>
+        <input type="text" placeholder="Title" id="title" maxlength="40"><br>
         <input type="text" placeholder="Author" id="author"><br>
         <button type="button" id="add-book">Add</button>
     </form>
-    <script src="app.js"></script>
+    <div class="contact-info hidden">
+        <h2>Contact information</h2>
+        <p>You can reach out to us at:</p>
+        <ul>
+            <li>E-mail: jhondoe@gmail.com</li>
+            <li>Phone Number: +3388555</li>
+            <li>Address: Street No name 87</li>
+        </ul>
+    </div>
+    <footer class="footer">Copyright ...</footer>
+    <script type="module" src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js"></script>
+    <script type="module" src="luxon.js"></script>
 </body>
 </html>

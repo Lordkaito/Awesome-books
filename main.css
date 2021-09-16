@@ -1,5 +1,61 @@
 * {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+html {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  padding: 0 20px;
+}
+
+.nav-align {
+  border: 2px solid black;
+  text-align: left;
+  width: calc(100% - 4px);
+  padding: 20px 0;
+  margin: 5px 0;
+  position: fixed;
+  top: 0;
+}
+
+.nav-bar {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-right {
+  display: flex;
+}
+
+.space-border {
+  padding: 0 20px;
+  border-right: 3px solid black;
+}
+
+.rmv-border {
+  border: none;
+}
+
+#date-time {
+  text-align: right;
+  width: 100%;
+  margin-bottom: 50px;
+  position: fixed;
+  top: 80px;
+  right: 10px;
 }
 
 #book-list {
@@ -43,6 +99,7 @@
   align-items: center;
   gap: 10px;
   color: white;
+  max-width: 300px;
 }
 
 .book {
@@ -101,5 +158,20 @@ input:focus-visible {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+.footer {
+  border: 2px solid black;
+  text-align: left;
+  width: calc(100% - 4px);
+  padding: 20px 0;
+  margin: 5px 0;
+  position: fixed;
+  bottom: 0;
+}
+
+.reload {
+  cursor: pointer;
+  margin: 0 10px;
 }
