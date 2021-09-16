@@ -105,3 +105,11 @@ input:focus-visible {
 .hidden {
   display: none;
 }
+
+.footer {
+border: 2px solid black;
+text-align: left;
+width: 100%;
+padding: 20px;
+margin: 20px;
+}
