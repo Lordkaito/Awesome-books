@@ -2,6 +2,39 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.nav-align {
+  border: 2px solid black;
+  text-align: left;
+  width: 100%;
+  padding: 20px;
+  margin: 20px;
+}
+
+.nav-bar{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+a{
+  text-decoration: none;
+}
+
+.nav-right{
+  display: flex;
+}
+.space-border{
+  padding: 0 20px;
+  border-right: 3px solid black;
+}
+.rmv-border{
+  border:none;
+}
+#date-time {
+  text-align: right;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
 #book-list {
   border: 3px solid darkgray;
   border-radius: 5px;
@@ -107,9 +140,9 @@ input:focus-visible {
 }
 
 .footer {
-border: 2px solid black;
-text-align: left;
-width: 100%;
-padding: 20px;
-margin: 20px;
+  border: 2px solid black;
+  text-align: left;
+  width: 100%;
+  padding: 20px;
+  margin: 20px;
 }
