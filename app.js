@@ -1,7 +1,11 @@
+const date = new Date();
+document.getElementById('date-time').innerHTML = date;
+
 const bookSel = document.querySelector('#book-list');
 const button = document.querySelector('#add-book');
 const titleSel = document.querySelector('#title');
 const authorSel = document.querySelector('#author');
+
 let bookList = [];
 // add books to the page
 const addBookToList = (book) => {
