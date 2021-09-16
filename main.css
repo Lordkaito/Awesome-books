@@ -43,6 +43,8 @@
   align-items: center;
   gap: 10px;
   color: white;
+  max-width: 300px;
+  overflow: auto;
 }
 
 .book {
