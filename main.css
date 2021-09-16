@@ -10,25 +10,29 @@
   margin: 20px;
 }
 
-.nav-bar{
+.nav-bar {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
 }
-a{
+
+a {
   text-decoration: none;
 }
 
-.nav-right{
+.nav-right {
   display: flex;
 }
-.space-border{
+
+.space-border {
   padding: 0 20px;
   border-right: 3px solid black;
 }
-.rmv-border{
-  border:none;
+
+.rmv-border {
+  border: none;
 }
+
 #date-time {
   text-align: right;
   width: 100%;
